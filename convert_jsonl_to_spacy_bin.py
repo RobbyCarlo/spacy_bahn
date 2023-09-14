@@ -38,7 +38,7 @@ def main(
     label: List[str],
     force: bool,
     language: str,
-    nlp_task: NLPTask = NLPTask.CLS,
+    nlp_task: NLPTask = NLPTask.NER,
 ):
     tmp_dir = "."
     convert_single_file(
