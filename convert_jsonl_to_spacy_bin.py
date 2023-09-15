@@ -8,6 +8,7 @@ import spacy
 import srsly
 from spacy.tokens import DocBin, Span
 from spacy.tokens import Doc
+from spacy.util import filter_spans
 from tqdm import tqdm
 import logging
 
@@ -115,6 +116,8 @@ def add_ents(all_labels, current_label, doc):
         else:
             all_spans.append(current_span)
 
+    all_spans = filter_spans(all_spans)
+    doc.set_ents(all_spans)
     # doc.spans[SpacyOnlineTrainer.SPANCAT_KEY] = all_spans
 
 
